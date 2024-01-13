@@ -1,29 +1,26 @@
-# Languages
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
 
 [[language]]
 name = "rust"
 auto-format = true
 
-[language-server.rust-analyzer.config.check]
-command = "clippy"
 
 [[language]]
 name = "python"
+# roots = ["pyproject.toml", "setup.py", .git"]
+language-servers =[{ name="pyright"}]
 auto-format = true
-formatter = {command = 'black', args = ["--quiet", "-"]}
-language-servers = ["pyright"]
-
-[language-server.pyright]
-command = "pyright-langserver"
-args = ["--stdio"]
-config = {}
+formatter = {command = '/opt/devpy311/bin/black', args = ["--quiet", "-"]}
 
 [[language]]
 name = "json"
 formatter = { command = 'prettier', args = ["--parser", "json"] }
 auto-format = true
 
-# Debuggers
+[language-server.rust-analyzer.config.check]
+command = "clippy"
 
 [language.debugger]
 command = "codelldb"

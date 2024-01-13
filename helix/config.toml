@@ -6,6 +6,7 @@ cursorline = true
 true-color = true
 bufferline = "multiple"
 color-modes = true
+mouse = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -27,3 +28,20 @@ enable = true
 
 [editor.lsp]
 display-inlay-hints = true
+
+[editor.file-picker]
+hidden = false
+
+# Keymaps
+[keys.normal]
+C-n = ":new"
+C-r = ":reload-all"
+A-k = ["extend_line", "delete_selection", "move_line_up", "paste_before", "collapse_selection"]
+A-j = ["extend_line", "delete_selection", "move_line_down", "paste_before", "collapse_selection"]
+"#" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection"]
+"space" = {"space" = "buffer_picker", "n" = ":set lsp.display-inlay-hints true", "m" = ":set lsp.display-inlay-hints false"}
+"0" = ["goto_line_start", "move_next_word_start", "collapse_selection"]
+
+# [keys.normal.g]
+# "H" = "goto_line_start"
+# "h" = ["goto_line_start", "move_next_word_start", "collapse_selection"]
