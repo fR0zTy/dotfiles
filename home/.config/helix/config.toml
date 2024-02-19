@@ -45,3 +45,7 @@ A-j = ["extend_line", "delete_selection", "move_line_down", "paste_before", "col
 # [keys.normal.g]
 # "H" = "goto_line_start"
 # "h" = ["goto_line_start", "move_next_word_start", "collapse_selection"]
+
+[keys.insert]
+C-h = "move_char_left"
+C-l = "move_char_right"
