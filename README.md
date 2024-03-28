@@ -17,5 +17,5 @@ For stowing all packages the following can be used.
 stow --target=/home/fr0zty */
 ```
 
-[!NOTE]
+> [!NOTE]
 Using `*` instead of `*/` will stow everything in the repo, including README, LICENSE etc.
