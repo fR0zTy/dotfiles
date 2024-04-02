@@ -120,24 +120,28 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+RUST_BACKTRACE=1
+export EDITOR=helix
+export VIEWER=bat
+
+
 # Example aliases
-alias zshconfig="kate ~/.zshrc"
 alias cat=bat
 alias hx=helix
 alias lk=lazydocker
 alias lg=lazygit
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="${EDITOR} ~/.zshrc"
+alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-RUST_BACKTRACE=1
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
-
 eval "$(zoxide init zsh --cmd cd)"
 
-# Pyenv initialization
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if command -v pyenv &> /dev/null
+then
+	# Pyenv initialization
+	export PYENV_ROOT="$HOME/.pyenv"
+	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+fi
