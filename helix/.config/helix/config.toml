@@ -4,9 +4,9 @@ theme = "ayu_dark"
 line-number = "relative"
 cursorline = true
 true-color = true
-bufferline = "multiple"
+bufferline = "never"
 color-modes = true
-mouse = true
+mouse = false
 
 [editor.cursor-shape]
 insert = "bar"
