@@ -4,9 +4,9 @@ theme = "ayu_dark"
 line-number = "relative"
 cursorline = true
 true-color = true
-bufferline = "never"
+bufferline = "multiple"
 color-modes = true
-mouse = false
+mouse = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -43,6 +43,8 @@ A-j = ["extend_line", "delete_selection", "move_line_down", "paste_before", "col
 "space" = {"space" = "buffer_picker", "n" = ":set lsp.display-inlay-hints true", "m" = ":set lsp.display-inlay-hints false"}
 "0" = ["goto_line_start", "move_next_word_start", "collapse_selection"]
 "X" = "extend_line_above"
+"C-pageup" = ":buffer-previous"
+"C-pagedown" = ":buffer-next"
 
 [keys.insert]
 C-h = "move_char_left"
