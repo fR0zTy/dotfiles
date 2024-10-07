@@ -56,8 +56,16 @@ key = "Return"
 mods = "Control"
 
 [shell]
-args = ["-l", "-c", "tmux attach || tmux"]
-program = "/usr/bin/zsh"
+# Tmux config
+# program = "/usr/bin/zsh"
+# args = ["-l", "-c", "tmux attach || tmux"]
+
+# Zellij config
+program = "zellij"
+# args = ["attach", "--index", "0", "--create"]
+
+[env]
+SHELL = "/usr/bin/zsh"
 
 [window]
 decorations = "none"

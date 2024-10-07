@@ -124,6 +124,13 @@ RUST_BACKTRACE=1
 export EDITOR=helix
 export VIEWER=bat
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
 
 # Example aliases
 alias cat=bat
