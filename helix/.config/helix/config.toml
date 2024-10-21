@@ -53,6 +53,11 @@ A-j = ["extend_line", "delete_selection", "move_line_down", "paste_before", "col
 "A-y" = "goto_prev_change"
 "A-u" = "goto_next_change"
 
+[keys.select]
+"A-w" = "goto_prev_diag"
+"A-e" = "goto_next_diag"
+"A-y" = "goto_prev_change"
+"A-u" = "goto_next_change"
 
 [keys.insert]
 C-h = "move_char_left"
