@@ -10,14 +10,20 @@ auto-format = true
 [[language]]
 name = "python"
 # roots = ["pyproject.toml", "setup.py", .git"]
-language-servers =[{ name="pyright"}]
+language-servers =["pyright", "ruff"]
 auto-format = true
-formatter = {command = '/opt/devpy311/bin/black', args = ["--quiet", "-"]}
+formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
+file-types = ["py", "ipynb"]
+# formatter = {command = '/opt/devpy311/bin/black', args = ["--quiet", "-"]}
+# formatter = {command = "uv", args = ["run", "ruff", "check", "--fix"]}
 
 [[language]]
 name = "json"
 formatter = { command = 'prettier', args = ["--parser", "json"] }
 auto-format = true
+
+[language-server.rust-analyzer]
+timeout = 20
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
@@ -31,11 +37,17 @@ transport = "tcp"
 [[language.debugger.templates]]
 name = "binary"
 request = "launch"
+completion = [ { name = "binary", completion = "filename" } ]
+args = { program = "{0}", initCommands = [ "command script import /usr/local/etc/lldb_vscode_rustc_primer.py" ] }
 
-[[language.debugger.templates.completion]]
-completion = "filename"
-name = "binary"
+# [[language.debugger.templates]]
+# name = "binary"
+# request = "launch"
 
-[language.debugger.templates.args]
-program = "{0}"
-runInTerminal = true
+# [[language.debugger.templates.completion]]
+# completion = "filename"
+# name = "binary"
+
+# [language.debugger.templates.args]
+# program = "{0}"
+# runInTerminal = true
