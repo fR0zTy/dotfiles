@@ -146,6 +146,15 @@ alias ls=eza
 
 eval "$(zoxide init zsh --cmd cd)"
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 if command -v pyenv &> /dev/null
 then
 	# Pyenv initialization
@@ -153,3 +162,10 @@ then
 	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 	eval "$(pyenv init -)"
 fi
+
+if command -v go &> /dev/null
+then
+	# Go installation
+	export PATH="$HOME/go/bin:$PATH"
+fi
+
