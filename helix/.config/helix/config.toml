@@ -1,12 +1,17 @@
 theme = "ayu_dark"
 
 [editor]
-line-number = "relative"
+line-number = "absolute"
 cursorline = true
 true-color = true
-bufferline = "multiple"
+bufferline = "never"
 color-modes = true
+scroll-lines = 7
 mouse = true
+preview-completion-insert = true
+end-of-line-diagnostics = "hint"
+jump-label-alphabet = "jkfdaslghrtuyvbmncewiopqxz"
+
 
 [editor.cursor-shape]
 insert = "bar"
@@ -31,6 +36,13 @@ display-inlay-hints = true
 
 [editor.file-picker]
 hidden = false  # false shows hidden files, true ignores hidden files
+
+[editor.inline-diagnostics]
+cursor-line = "hint" # show warnings and errors on the cursorline inline
+
+[editor.smart-tab]
+enable = true
+
 
 # Keymaps
 [keys.normal]
