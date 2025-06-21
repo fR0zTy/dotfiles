@@ -144,7 +144,10 @@ alias ls=eza
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(zoxide init zsh --cmd cd)"
+if command -v zoxide &> /dev/null
+then
+	eval "$(zoxide init zsh --cmd cd)"
+fi
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -169,3 +172,7 @@ then
 	export PATH="$HOME/go/bin:$PATH"
 fi
 
+if command -v starship &> /dev/null
+then
+	eval "$(starship init zsh)"
+fi
