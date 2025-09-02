@@ -6,7 +6,6 @@ args = ["--stdio"]
 name = "rust"
 auto-format = true
 
-
 [[language]]
 name = "python"
 # roots = ["pyproject.toml", "setup.py", .git"]
@@ -16,6 +15,19 @@ formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format 
 file-types = ["py", "ipynb"]
 # formatter = {command = '/opt/devpy311/bin/black', args = ["--quiet", "-"]}
 # formatter = {command = "uv", args = ["run", "ruff", "check", "--fix"]}
+#
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "markdown-oxide", "mdpls"]
+auto-format = true
+
+[[language]]
+name = "toml"
+# auto-format = true
+
+[language-server.mdpls]
+command = "mdpls"
+config = { markdown.preview.auto = false }
 
 [[language]]
 name = "json"

@@ -1,0 +1,9 @@
+inherits = "everblush"
+
+"ui.selection.primary" = {"bg" = "gray"}
+"constant.numeric" = { fg = "cyan" }
+"constant.numeric.float" = { fg = "cyan" }
+# "string" = { fg = "yellow" }
+# "string.regex" = { fg = "yellow" }
+# "type" = { fg = "green" }
+# "type.builtin" = { fg = "green" }

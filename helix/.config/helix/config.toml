@@ -1,4 +1,4 @@
-theme = "ayu_dark"
+theme = "ayu_dark_alt"
 
 [editor]
 line-number = "absolute"
@@ -10,7 +10,6 @@ scroll-lines = 7
 mouse = true
 preview-completion-insert = true
 end-of-line-diagnostics = "hint"
-jump-label-alphabet = "jkfdaslghrtuyvbmncewiopqxz"
 
 
 [editor.cursor-shape]
@@ -53,7 +52,7 @@ A-k = ["extend_line", "delete_selection", "move_line_up", "paste_before", "colla
 A-j = ["extend_line", "delete_selection", "move_line_down", "paste_before", "collapse_selection"]
 "#" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection"]
 "$" = ["search_selection", "select_mode"]
-"space" = {"space" = "buffer_picker", "n" = ":set lsp.display-inlay-hints true", "m" = ":set lsp.display-inlay-hints false"}
+"space" = {"space" = "buffer_picker", "n" = ":set lsp.display-inlay-hints true", "m" = ":set lsp.display-inlay-hints false", "b" = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"}
 "0" = ["goto_line_start", "move_next_word_start", "collapse_selection"]
 "X" = "extend_line_above"
 "C-pageup" = ":buffer-previous"
@@ -64,6 +63,7 @@ A-j = ["extend_line", "delete_selection", "move_line_down", "paste_before", "col
 "A-t" = "goto_next_parameter"
 "A-y" = "goto_prev_change"
 "A-u" = "goto_next_change"
+"C-f" = "no_op"
 
 [keys.select]
 "A-w" = "goto_prev_diag"

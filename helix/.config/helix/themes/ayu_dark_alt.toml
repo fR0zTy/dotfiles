@@ -1,0 +1,5 @@
+inherits = "ayu_dark"
+
+"ui.cursorline" = {"bg" = "black"}
+"ui.virtual.inlay-hint" = { "fg" = "gray", "bg" = "background" }
+"function.macro" = {"fg" = "magenta"}
